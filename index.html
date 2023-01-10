@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://kit.fontawesome.com/88e9d45919.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Challenge 1</title>
+</head>
+<body>
+    <head>
+        <img src="imagenes/Vectoralura.png" alt="alura" id="vectorAlura">
+    </head>
+    <main>
+        <textarea cols="30" rows="6" class="ingresaTexto" id="mensaje" type="text" placeholder="Ingrese el texto aqui"></textarea>
+        <section class="seccionAlerta">
+        <p class="parrafoAlerta"><img src="imagenes/Vector.png" alt="alerta" id="alerta">
+            Solo letras minúsculas y sin acentos.
+        </p>
+        </section>
+
+        <section class="seccionBotones">
+            <button class="botones" id="encriptar">Encriptar</button>
+            <button class="botones" id="desencriptar">Desencriptar</button>
+        </section>
+        <section class="alertaErrores alertaErroresMayAc" id="mostrarAlertaErrorMayusAc">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> El texto no debe de contener mayúsculas, ni acentos.</p>
+        </section>
+        <section class="alertaErrores alertaEnvioVacio" id="mostrarAlertaErrorVac">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> El campo de texto esta vacio.</p>
+        </section>
+            </main>
+        <aside>
+            <section class="resultado">
+                <div class="resultado-vacio" id="muestraResultadoVacio">
+                    <img id="imagenMuneco" src="imagenes/Muñeco.png" alt="muneco">
+                    <h2 id="hNingunMensaje">Ningún mensaje fue encontrado</h2>
+                    <p id="textoNingunMensaje">Ingresa el texto que desee encriptar o desencriptar</p>
+                </div>
+                <div class="resultadoEncriptDesencript" id="resultadoMostrado">
+                    <p id="mostrarResultadoCalc"></p>
+                    <button class="botones" id="copiar">Copiar</button>
+                </div>
+            </section>
+        </aside>
+    <script src="script.js"></script>
+</body>
+</html>

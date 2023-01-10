@@ -1,0 +1,297 @@
+:root{
+    --letra:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --azulClarito:#739ed2;
+    --darkblue:#0A3871;
+    }
+body{
+    background: #e5e5e5;
+}
+#vectorAlura{
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    width: 2em;
+}
+.ingresaTexto{
+    position: relative;
+    top: 80px;
+    left: 10%;
+    width: 50%;
+    height: 60%;
+    font-family: var(--letra);
+    font-style: normal;
+    font-size: 32px;
+    color: darkblue;
+    font-weight: 400;
+    line-height: 48px;
+    border: 0;
+    background-color: transparent;
+  
+}
+.ingresaTexto::placeholder{
+    color: darkblue;
+    font-weight: 400;
+    line-height: 48px;
+}
+.ingresaTexto:focus{
+    outline: none;
+    cursor: text;
+}
+#alerta{
+    width: 16px;
+    height: 16px;
+}
+
+.seccionAlerta{
+    width: 285px;
+    height: 18px;
+    font-family: var(--letra);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #495057;
+    opacity: 0.8;
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    margin: 3px;
+}
+
+.seccionBotones{
+    position: absolute;
+    left: 8%;
+    top: 75%;
+    align-items: flex-start;
+    padding: 2em;
+    gap: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.botones{
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    font-family: var(--letra);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#encriptar{
+    background: #0A3871;
+    border: #0A3871;
+    cursor: pointer;
+}
+
+#desencriptar{
+    background: transparent;
+    border: 1px solid var(--darkblue);
+    color: var(--darkblue);
+    cursor: pointer;
+}
+
+/*Inicia bloque de notificación de errores*/
+.alertaErrores{
+    position: absolute;
+    left: 8%;
+    top: 74%;
+    align-items: flex-start;
+    gap: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    height: 5%;
+	line-height: 20px;
+	background: #F66060;
+	padding: 0 15px;
+	width: 50%;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 0 20px 20px 20px;
+    color: white;
+    font-size: 1em;
+   
+}
+.alertaErroresMayAc{
+   display: none;
+}
+.alertaErroresMayAc-activo{
+    display: block;
+}
+.alertaEnvioVacio{
+    display: none;
+}
+.alertaEnvioVacio-activo{
+    display: block;
+}
+/*Fin notificaciones de error*/
+
+/*Inicia cuadro donde se muestran los resultados*/
+.resultado{
+    position: absolute;
+    width: 30%;
+    height: 90%;
+    background: #FFFFFF;
+    left: 68%;
+    top: 5%;
+    box-shadow: 0px 24px 32px -8pc rgba(0, 0, 0, 0.0);
+    border-radius: 32px;
+    margin-bottom: 20px;
+}
+.resultadoEncriptDesencript{
+    display: none;
+}
+.resultadoEncriptDesencript-activo{
+    display: block;
+}
+
+.resultado-vacio{
+    display: inline-block;
+    position: absolute;
+    top: 4em;
+    left: .5em;
+}
+.resultado-vacio-desactivo{
+    display: none;
+}
+#imagenMuneco{
+    position: relative;
+    left: 3em;
+    width: 80%;
+}
+
+#hNingunMensaje{
+    position: relative;
+    font-family: var(--letra);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 120%;
+    color: #343A40;
+    text-align: center;
+}
+#textoNingunMensaje{
+    padding: .5em;
+    position: relative;
+    font-family: var(--letra);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #495057;
+    text-align: center;
+}
+/*Muestra los resultados del encriptado desencriptado*/
+#mostrarResultadoCalc{
+    position: absolute;
+    margin: 15%;
+    width: 90%;
+    height: 40%;
+    font-family: var(--letra);
+    font-style: normal;
+    font-size: 1.5em;
+    color: darkblue;
+    font-weight: 400;
+    line-height: 48px;
+    background-color: transparent;
+}
+#copiar{
+    position: absolute;
+    left: 15%;
+    top: 80%;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background: transparent;
+    color: var(--darkblue);
+    border: 1px solid var(--darkblue);
+    cursor: pointer;
+}
+/*Fin cuadro donde se muestran los resultados*/
+@media screen and (max-width:1200px) {
+    .resultado{
+        width: 30%;
+    }
+    .seccionAlerta{
+        left: 5%;
+    }
+    .seccionBotones{
+        left: 0;
+    }
+    .botones{
+        width: 200px;
+        height: 50px;
+        margin: .5em;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .seccionAlerta{
+        position: absolute;
+        top: 75%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .ingresaTexto{
+        width: 80%;
+    }
+    .seccionAlerta{
+        position: absolute;
+        top: 72%;
+        left: 20%;
+    }
+    .alertaErrores{
+        width: 80%;
+    }
+    .seccionBotones{
+        display: block;
+        position: absolute;
+        left: 20%;
+        padding: 20px;
+       
+    }
+
+    .resultado{
+        position: absolute;
+        left: 10%;
+        top: 115%;
+        width: 80%;
+        height: 100%;
+    }
+    .alertaErroresMayAc-activo{
+        font-size: .6em;
+    }
+    #encriptar,#desencriptar{
+        margin-bottom:10px ;
+    }
+    #copiar{
+        left: 7%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .ingresaTexto{
+        width: 90%;
+    }
+    .alertaErrores{
+        width: 95%;
+    }
+    .alertaErroresMayAc-activo{
+        font-size: .6em;
+    }
+    .resultado{
+        position: absolute;
+        left: 10%;
+        top: 115%;
+        width: 100%;
+        height: 80%;
+    }
+}
