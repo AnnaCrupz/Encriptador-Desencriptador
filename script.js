@@ -7,6 +7,17 @@ const parrafoResultado=document.getElementById('mostrarResultadoCalc');
 const mostrarAlertaErrorMayusAc=document.getElementById('mostrarAlertaErrorMayusAc');
 const mostrarAlertaErrorVac=document.getElementById('mostrarAlertaErrorVac');
 const btnCopiar=document.getElementById('copiar');
+const copiaPortapapelesId=document.getElementById('copiaPortapapeles');
+
+
+mensaje.addEventListener("keyup",()=>{
+  if (mensaje.value=="") {
+    muestraResultadoVacio.classList.remove('resultado-vacio-desactivo');
+    muestraResultadoVacio.classList.add('resultado-vacio');
+    mostrarCalc.classList.remove('resultadoEncriptDesencript-activo');
+    //mostrarCalc.classList.add('resultadoEncriptDesencript-activo');
+  }
+})
 
 btnEncriptar.addEventListener("click",()=>{
   
@@ -17,6 +28,7 @@ btnEncriptar.addEventListener("click",()=>{
       muestraResultadoVacio.classList.add('resultado-vacio-desactivo');
       mostrarCalc.classList.add('resultadoEncriptDesencript-activo');
       parrafoResultado.innerHTML=encriptar(textoEncript);
+      
     } else{
       //Alerta de contiene mayusculas o acentos
       mostrarAlertaErrorMayusAc.classList.remove('alertaErroresMayAc');
@@ -64,9 +76,32 @@ btnDesencriptar.addEventListener("click",()=>{
   }
 })
 
-    btnCopiar.addEventListener("click",()=>{
+    btnCopiar.addEventListener("click",() =>{
       //Copiar texto de cuadro encriptado o desencriptado
-    })
+       let $parrafoResultado=parrafoResultado.innerHTML;
+        console.log($parrafoResultado);
+        navigator.clipboard.writeText($parrafoResultado)
+        .then(()=>{
+          copiaPortapapelesId.classList.remove('copiaPortapapeles'),
+          copiaPortapapelesId.classList.add('copiaPortapapeles-activo'), 
+        
+          setTimeout(()=>{
+            copiaPortapapelesId.classList.add('copiaPortapapeles');
+            copiaPortapapelesId.classList.remove('copiaPortapapeles-activo');  
+          },3000)
+        })
+        .catch(err=>{
+          console.log("error al copiar",err);
+        })
+          
+        
+         
+        }
+       
+       
+      
+     
+    )
 
 
 /*Inicio checarTexto(texto):Función para checar si el texto contiene acentos o mayusculas
@@ -148,6 +183,3 @@ function desencriptar(textoDesencript) {
   return texto;
 }
 
-function copiarTxt(textoCopia) {
-  
-}

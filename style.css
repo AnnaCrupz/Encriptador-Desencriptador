@@ -10,7 +10,7 @@ body{
     position: absolute;
     top: 3%;
     left: 5%;
-    width: 2em;
+    width: 1.5em;
 }
 .ingresaTexto{
     position: relative;
@@ -20,7 +20,7 @@ body{
     height: 60%;
     font-family: var(--letra);
     font-style: normal;
-    font-size: 32px;
+    font-size: 2em;
     color: darkblue;
     font-weight: 400;
     line-height: 48px;
@@ -43,8 +43,6 @@ body{
 }
 
 .seccionAlerta{
-    width: 285px;
-    height: 18px;
     font-family: var(--letra);
     font-weight: 400;
     font-size: 12px;
@@ -54,23 +52,16 @@ body{
     position: absolute;
     left: 10%;
     top: 70%;
-    margin: 3px;
 }
 
 .seccionBotones{
     position: absolute;
-    left: 8%;
+    left: 10%;
     top: 75%;
-    align-items: flex-start;
-    padding: 2em;
-    gap: 8px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .botones{
-    width: 328px;
+    width: 40%;
     height: 67px;
     border-radius: 24px;
     font-family: var(--letra);
@@ -97,8 +88,10 @@ body{
 /*Inicia bloque de notificación de errores*/
 .alertaErrores{
     position: absolute;
-    left: 8%;
-    top: 74%;
+    left: 10%;
+    top: 5%;
+    padding: 5px;
+    /*
     align-items: flex-start;
     gap: 8px;
     flex: none;
@@ -113,7 +106,7 @@ body{
     font-weight: 700;
     border-radius: 0 20px 20px 20px;
     color: white;
-    font-size: 1em;
+    font-size: 1em;*/
    
 }
 .alertaErroresMayAc{
@@ -133,14 +126,12 @@ body{
 /*Inicia cuadro donde se muestran los resultados*/
 .resultado{
     position: absolute;
-    width: 30%;
-    height: 90%;
+    height: 100%;
     background: #FFFFFF;
-    left: 68%;
-    top: 5%;
+    left: 65%;
+    top: 2%;
     box-shadow: 0px 24px 32px -8pc rgba(0, 0, 0, 0.0);
-    border-radius: 32px;
-    margin-bottom: 20px;
+    border-radius: 2.5em;
 }
 .resultadoEncriptDesencript{
     display: none;
@@ -153,7 +144,7 @@ body{
     display: inline-block;
     position: absolute;
     top: 4em;
-    left: .5em;
+    left: .7em;
 }
 .resultado-vacio-desactivo{
     display: none;
@@ -169,7 +160,7 @@ body{
     font-family: var(--letra);
     font-style: normal;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 120%;
     color: #343A40;
     text-align: center;
@@ -180,7 +171,7 @@ body{
     font-family: var(--letra);
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 150%;
     color: #495057;
     text-align: center;
@@ -193,31 +184,46 @@ body{
     height: 40%;
     font-family: var(--letra);
     font-style: normal;
-    font-size: 1.5em;
+    font-size: 1em;
     color: darkblue;
     font-weight: 400;
-    line-height: 48px;
+    line-height: 20px;
     background-color: transparent;
 }
 #copiar{
     position: absolute;
-    left: 15%;
-    top: 80%;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
+    top: 73%;
+    right: 30%;
     flex: none;
     order: 0;
     flex-grow: 0;
     background: transparent;
     color: var(--darkblue);
     border: 1px solid var(--darkblue);
+    text-align: center;
     cursor: pointer;
+   
+}
+#copiaPortapapeles{
+    position: relative;
+    left: 22%;
+    top:0;
+    width: 100%;
+}
+.copiaPortapapeles{
+    display: none;
+}
+.copiaPortapapeles-activo{
+    display: block;
 }
 /*Fin cuadro donde se muestran los resultados*/
+
+
+/*
 @media screen and (max-width:1200px) {
     .resultado{
         width: 30%;
+        height: 100%;
     }
     .seccionAlerta{
         left: 5%;
@@ -232,12 +238,35 @@ body{
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:960px) {
     .seccionAlerta{
         position: absolute;
         top: 75%;
     }
+    .alertaErrores{
+        position: absolute;
+        left: 8%;
+        top: 70%;
+    }
+    .resultado{
+        height: 120%;
+    }
+    #hNingunMensaje{
+        font-size: 1.3em;
+    }
+    #copiar{
+        position: absolute;
+        left: 15%;
+        top: 65%;
+        align-items: flex-start;
+        width: 150px;
+    }
+    #copiaPortapapeles{
+        left: 15%;
+        width: 150px;
+    }
 }
+
 
 @media screen and (max-width:480px) {
     .ingresaTexto{
@@ -254,17 +283,12 @@ body{
     .seccionBotones{
         display: block;
         position: absolute;
-        left: 20%;
-        padding: 20px;
        
     }
 
     .resultado{
         position: absolute;
-        left: 10%;
-        top: 115%;
-        width: 80%;
-        height: 100%;
+        height: 80%;
     }
     .alertaErroresMayAc-activo{
         font-size: .6em;
@@ -273,11 +297,35 @@ body{
         margin-bottom:10px ;
     }
     #copiar{
-        left: 7%;
+        left: 25%;
+        
+    }
+    #copiaPortapapeles{
+        left: 28%;
     }
 }
+*/
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:1024px) {
+    .resultado{
+        height: 130%;
+    }
+}
+@media screen and  (max-width:767px){
+    .resultado{
+        left: 85%;
+        height: 120%;
+    }
+    .botones{
+        width: 35%;
+    }
+    #copiaPortapapeles{
+        top: 75%;
+        left: 25%;
+    }
+
+}
+@media screen and (max-width:575px) {
     .ingresaTexto{
         width: 90%;
     }
@@ -287,11 +335,29 @@ body{
     .alertaErroresMayAc-activo{
         font-size: .6em;
     }
+    .seccionBotones{
+        width: 80%;
+    }
+    .botones{
+        width: 100%;
+    }
     .resultado{
         position: absolute;
-        left: 10%;
-        top: 115%;
-        width: 100%;
-        height: 80%;
+        margin: 5px;
+        left: 1%;
+        top:110%;
+        width: 95%;
+    }
+    #copiaPortapapeles{
+        top: 105%;
+        left: 25%;
+    }
+    #copiar{
+        top: 80%;
+        right: 10%;
+        width: 80%;
+    }
+    .resultado-vacio{
+        left: 1em;
     }
 }
